@@ -1,0 +1,14 @@
+{
+  "name": "burtsev.me",
+  "version": "3.0.0",
+  "description": "Home site of Alexander Burtsev",
+  "authors": [
+    "Alexander Burtsev"
+  ],
+  "license": "MIT",
+  "homepage": "http://burtsev.me",
+  "private": true,
+  "dependencies": {
+    "normalize.css": "~3.0.2"
+  }
+}
