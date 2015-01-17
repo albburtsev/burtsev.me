@@ -1,0 +1,11 @@
+{
+  "name": "burtsev.me",
+  "version": "3.0.0",
+  "description": "Home site of Alexander Burtsev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Burtsev",
+  "license": "MIT"
+}
