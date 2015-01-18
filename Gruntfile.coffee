@@ -4,9 +4,29 @@ module.exports = (grunt) ->
 	require('load-grunt-tasks')(grunt)
 
 	grunt.initConfig
+		stylus:
+			styles:
+				files:
+					'build/styles.css': 'static/css/styles.styl'
+
 		concat:
 			styles:
-				src: ['bower_components/normalize.css/normalize.css']
-				dest: 'build/styles.css'
+				src: [
+					'bower_components/normalize.css/normalize.css'
+					'build/styles.css'
+				]
+				dest: 'build/build.css'
 
-	grunt.registerTask 'default', ['concat']
+		notify:
+			build_ready:
+				options:
+					message: 'Build is ready!'
+
+		watch:
+			stylus:
+				files: [
+					'static/css/**/*.styl'
+				],
+				tasks: ['stylus', 'concat:styles', 'notify:build_ready']
+
+	grunt.registerTask 'default', ['stylus', 'concat', 'watch']
