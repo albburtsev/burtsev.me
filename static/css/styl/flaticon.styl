@@ -1,0 +1,28 @@
+$font_path='../static/fonts/'
+
+@font-face
+	font-family: 'Flaticon'
+	src: url($font_path'flaticon.eot')
+	src: url($font_path'flaticon.eot#iefix') format('mbedded-opentype'),
+	url($font_path'flaticon.woff') format('woff'),
+	url($font_path'flaticon.ttf') format('truetype'),
+	url($font_path'flaticon.svg') format('svg')
+	font-weight: normal
+	font-style: normal
+
+[class^='flaticon-']:before, [class*=' flaticon-']:before,
+[class^='flaticon-']:after, [class*=' flaticon-']:after {   
+	font-family: Flaticon
+	font-size: 20px
+	font-style: normal
+	//margin-left: 20px
+}
+.flaticon-
+	&curriculum:before
+		content: '\e000'
+	&male66:before
+		content: '\e001'
+	&notebook35:before
+		content: '\e002'
+	&portfolio14:before
+		content: '\e003'
