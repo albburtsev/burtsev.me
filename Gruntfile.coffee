@@ -12,8 +12,8 @@ module.exports = (grunt) ->
 		concat:
 			styles:
 				src: [
-					'bower_components/normalize.css/normalize.css'
 					'build/styles.css'
+					'bower_components/normalize.css/normalize.css'
 				]
 				dest: 'build/build.css'
 
