@@ -1,16 +1,27 @@
+// Variables
+$font_path='../static/fonts/'
+$image_path = '../static/i/'
+$shadow = 0 0 2px rgba(0, 0, 0, .5)
+
 @import 'nib'
 @import 'styl/*'
 
 html
 	height: 100%
 	font-size: 25px
-	background: #EEE
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+	background: #FFF
 
 body
 	height: 100%
 
 .clearfix
 	clearfix()
+
+.implicit
+	position: absolute
+	width: 0
+	height: 0
 
 @media only screen and (max-width: 800px)
 	html
