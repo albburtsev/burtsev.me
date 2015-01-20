@@ -2,20 +2,18 @@ module.exports = (grunt) ->
 	'use strict'
 
 	require('load-grunt-tasks')(grunt)
+	require('time-grunt')(grunt)
 
 	grunt.initConfig
 		stylus:
 			styles:
+				options:
+					urlfunc: 'embedurl'
+					paths: [
+						'bower_components/normalize.styl/'
+					]
 				files:
-					'build/styles.css': 'static/css/styles.styl'
-
-		concat:
-			styles:
-				src: [
-					'build/styles.css'
-					'bower_components/normalize.css/normalize.css'
-				]
-				dest: 'build/build.css'
+					'build/build.css': 'static/css/styles.styl'
 
 		notify:
 			build_ready:
@@ -27,6 +25,6 @@ module.exports = (grunt) ->
 				files: [
 					'static/css/**/*.styl'
 				],
-				tasks: ['stylus', 'concat:styles', 'notify:build_ready']
+				tasks: ['stylus', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'concat', 'watch']
+	grunt.registerTask 'default', ['stylus', 'watch']

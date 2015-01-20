@@ -2,22 +2,25 @@
 $font_path = '../static/fonts/'
 $image_path = '../static/i/'
 $shadow = 0 0 .1rem #000
-$shadow_hover = 0 0 .5rem #000
 
 // Fonts
-@import url('http://fonts.googleapis.com/css?family=Open+Sans')
-@import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic')
+@import url('http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic-ext');
 
 // Imports
 @import 'nib'
+@import 'normalize'
 @import 'styl/*'
 
 // Common staff
 html
 	min-height: 100%
 	font-size: 25px
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-	background: #222 url($image_path'bg.png') 0 0
+	font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+	line-height: 1.2
+	font-weight: 400
+	color: #222
+	background: #222 embedurl('../i/bg.png') // Image inlining for page background
 
 body
 	min-width: 300px
