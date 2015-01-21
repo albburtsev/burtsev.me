@@ -1,13 +1,17 @@
+$pages = {
+	about: (#FFFDDD)
+	contacts: (#FFEEEE)
+	resume: (#EBFFFD)
+}
+
 .content
 	padding: 1.5rem 10%
 	font-size: .8rem
 	background: #FFF
 	
-	&_about
-		background: #FFFDDD
-
-	&_contacts
-		background: #FFEEEE
+	for $page in keys($pages)
+		&_{$page}
+			background: $pages[$page]
 
 	h1, h2, h3
 		color: #666
