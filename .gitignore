@@ -1,1 +1,3 @@
 build/
+static/i/screenshots/*.png
+!static/i/screenshots/*.min.png

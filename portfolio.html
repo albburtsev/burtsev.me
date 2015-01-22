@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Alexander Burtsev: frontend-developer & traveler</title>
+	<title>Alexander Burtsev: portfolio</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="build/build.css">
 </head>
@@ -94,11 +94,11 @@
 	</svg>
 
 	<header class="jumbotron">
-		<h1 class="jumbotron__name">Alexander Burtsev</h1>
+		<h1 class="jumbotron__name"><a href="/">Alexander Burtsev</a></h1>
 		<p class="jumbotron__desc">Frontend-developer &amp; traveler</p>
 	</header>
 
-	<div class="tiles clearfix">
+	<div class="tiles tiles_atop tiles_atop_portfolio clearfix">
 		<a class="tile tile_about" href="about.html">
 			<span class="tile__icon">
 				<svg width="100%" height="100%" viewBox="-15 -10 94 94">
@@ -107,7 +107,7 @@
 			</span>
 			About me
 		</a>
-		<a class="tile tile_contacts" href="contacts.html">
+		<a class="tile tile_contacts" href="">
 			<span class="tile__icon">
 				<svg width="100%" height="100%" viewBox="-15 -15 94 94">
 				  <polygon points="0 0 64 0 64 64 0 64" fill="url(#pattern-contacts)" />
@@ -115,7 +115,7 @@
 			</span>
 			Contacts
 		</a>
-		<a class="tile tile_resume" href="resume.html">
+		<a class="tile tile_resume" href="">
 			<span class="tile__icon">
 				<svg width="100%" height="100%" viewBox="30 30 430 470">
 				  <polygon points="0 0 500 0 500 500 0 500" fill="url(#pattern-resume)" />
@@ -123,7 +123,7 @@
 			</span>
 			Resume
 		</a>
-		<a class="tile tile_portfolio" href="portfolio.html">
+		<a class="tile tile_portfolio" href="">
 			<span class="tile__icon">
 				<svg width="100%" height="100%" viewBox="-25 -20 178 188">
 				  <polygon points="0 0 128 0 128 128 0 128" fill="url(#pattern-portfolio)" />
@@ -132,6 +132,33 @@
 			Portfolio
 		</a>
 	</div>
+
+	<section class="content content_portfolio clearfix">
+		<a class="project" href="http://rememba.ru/">
+			<img class="project__image" src="static/i/screenshots/rememba1.min.png" alt="">
+			<span class="project__title">Rememba</span>
+			<span class="project__shutter">
+				<span class="project__shutter__caption">Application for expanding vocabulary</span>
+				My contribution: frontend code of application (Backbone/Marionette) and tests (CasperJS/PhantonCSS).
+			</span>
+		</a>
+		<a class="project" href="http://edox.ru/">
+			<img class="project__image" src="static/i/screenshots/edox2.min.png" alt="">
+			<span class="project__title">Edox Russia</span>
+			<span class="project__shutter">
+				<span class="project__shutter__caption">Edox watches in Russia</span>
+				My contribution: frontend (HTML/CSS, jQuery) and backend (CMS Correct).
+			</span>
+		</a>
+		<a class="project" href="http://www.gcwatches.ru/">
+			<img class="project__image" src="static/i/screenshots/gc1.min.png" alt="">
+			<span class="project__title">GC Watches</span>
+			<span class="project__shutter">
+				<span class="project__shutter__caption">GC Watches in Russia</span>
+				My contribution: frontend (HTML/CSS, jQuery) and backend (CMS Correct).
+			</span>
+		</a>
+	</section>
 
 	<footer class="footer">
 		<h2 class="footer__head">Powered by</h2>
