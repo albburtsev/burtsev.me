@@ -15,6 +15,13 @@ module.exports = (grunt) ->
 				files:
 					'build/build.css': 'static/css/styles.styl'
 
+		coffee:
+			compile:
+				files:
+					'build/build.js': [
+						'static/js/src/footer.coffee'
+					]
+
 		notify:
 			build_ready:
 				options:
@@ -26,5 +33,10 @@ module.exports = (grunt) ->
 					'static/css/**/*.styl'
 				],
 				tasks: ['stylus', 'notify:build_ready']
+			coffee:
+				files: [
+					'static/js/**/*.coffee'
+				],
+				tasks: ['coffee', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'watch']
+	grunt.registerTask 'default', ['stylus', 'coffee', 'watch']
