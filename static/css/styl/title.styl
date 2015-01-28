@@ -12,7 +12,8 @@
 
 	&__head
 		margin: 0
-		font: 2.5rem/1.2 $font_condensed
+		font: 2.5rem $font_condensed
+		line-height: 4rem
 		box-shadow: $shadow
 
 	&__text
@@ -22,7 +23,7 @@
 	&__gurt
 		width: 6rem
 		height: 6rem
-		margin: -4.5rem auto 0
+		margin: -5rem auto 0
 		background: #FFF
 		border-radius: 50%
 		box-shadow: $shadow
@@ -40,3 +41,12 @@
 		line-height: 5rem
 		text-shadow: $shadow
 		box-shadow: $shadow
+
+@media only screen and (max-width: 600px)
+	.title
+		&__text
+			width: auto
+			padding: 0 10%
+			text-align: left
+		&__gurt
+			margin: -5rem 1rem 0 auto
