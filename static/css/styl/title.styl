@@ -3,17 +3,13 @@
 
 	for $slide in keys($slides)
 		&_{$slide}
-			.title__icon,
-			.title__head
+			.title__icon
 				background: url($image_path''$slide'.png')
 
 	&__head
 		width: 50%
 		margin: 0
-		color: #FFF
-		text-shadow: $shadow
-		border-top: $gray_line
-		font: 2rem/1.4 'Open Sans Condensed', $font_default
+		font: 2.5rem/1.2 $font_condensed
 
 	&__delimeter
 		border-top: $gray_line
