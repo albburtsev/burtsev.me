@@ -3,26 +3,32 @@
 
 	for $slide in keys($slides)
 		&_{$slide}
-			.title__icon
+			.title__icon,
+			.title__icon:hover
 				background: url($image_path''$slide'.png')
+		&_{$slide}
+			.title__head
+				background: $slides[$slide]
 
 	&__head
-		width: 50%
 		margin: 0
 		font: 2.5rem/1.2 $font_condensed
+		box-shadow: $shadow
 
-	&__delimeter
-		border-top: $gray_line
+	&__text
+		display: block
+		width: 50%
 
 	&__gurt
 		width: 6rem
 		height: 6rem
-		margin: -3rem auto 0
+		margin: -4.5rem auto 0
 		background: #FFF
-		border: $gray_line
 		border-radius: 50%
+		box-shadow: $shadow
 
-	&__icon
+	&__icon,
+	&__icon:hover
 		display: inline-block
 		width: 5rem
 		height: 5rem
