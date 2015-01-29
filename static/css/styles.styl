@@ -1,7 +1,7 @@
 // Variables
 $font_path = '../static/fonts/'
-$font_default = 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
-$font_condensed = 'Open Sans Condensed', $font_default
+$font_default = 'PT Serif', Georgia, 'Times New Roman', serif
+$font_condensed = 'Open Sans Condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif
 
 $image_path = '../static/i/'
 
@@ -15,9 +15,12 @@ $shadow = 0 0 .1rem #000
 $gray_line = 1px solid #999
 
 $headers = { // [0] - font-size, [1] — margin-top, [2] — margin-bottom
+	// h2: (2rem 1rem .7rem)
+	// h3: (1.5rem .9rem .6rem)
+	// h4: (1.2rem .7rem .5rem)
 	h2: (2rem 1rem .7rem)
-	h3: (1.5rem .9rem .6rem)
-	h4: (1.2rem .7rem .5rem)
+	h3: (1.5rem 1rem .6rem)
+	h4: (1.2rem .7rem .3rem)
 }
 $slides = {
 	about: (#FFFDDD)
@@ -37,7 +40,6 @@ html
 	font-size: 25px
 	font-family: $font_default
 	line-height: 1.8
-	font-weight: 400
 	color: #333
 	background: #333
 
@@ -50,6 +52,7 @@ for $hi in keys($headers)
 		margin: $headers[$hi][1] 0 $headers[$hi][2]
 		font-family: $font_condensed
 		font-size: $headers[$hi][0]
+		line-height: $headers[$hi][0]
 
 p
 	padding: 0
