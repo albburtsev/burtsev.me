@@ -22,6 +22,11 @@ module.exports = (grunt) ->
 						'static/js/src/footer.coffee'
 					]
 
+		uglify:
+			ui:
+				files:
+					'build/build.min.js': 'build/build.js'
+
 		notify:
 			build_ready:
 				options:
@@ -33,11 +38,11 @@ module.exports = (grunt) ->
 					'static/css/**/*.styl'
 				],
 				tasks: ['stylus', 'notify:build_ready']
-			coffee:
+			ui:
 				files: [
 					'static/js/**/*.coffee'
 				],
-				tasks: ['coffee', 'notify:build_ready']
+				tasks: ['coffee', 'uglify', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'coffee', 'watch']
-	grunt.registerTask 'deploy', ['stylus', 'coffee']
+	grunt.registerTask 'default', ['stylus', 'coffee', 'uglify', 'watch']
+	grunt.registerTask 'deploy', ['stylus', 'coffee', 'uglify']
