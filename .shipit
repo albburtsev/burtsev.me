@@ -1,0 +1,10 @@
+host='burtsev.me'
+path='/home/sites/new.burtsev.me/www'
+
+[deploy]
+git checkout master
+git pull
+npm install
+
+[status]
+uptime
