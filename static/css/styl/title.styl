@@ -7,7 +7,14 @@
 				background: url($image_path''$slide'.png')
 		&_{$slide}
 			.title__head
-				background: $slides[$slide]
+				background: $slides[$slide][0]
+
+				&:before
+					display: block
+					height: .2rem
+					content: ''
+					font-size: 0
+					background: url($image_path''$slide'.png')
 
 	&__head
 		margin: 0

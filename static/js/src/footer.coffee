@@ -1,13 +1,11 @@
-icon = document.querySelector '.js-footer-icon'
-list = document.querySelector '.js-footer-list'
-isHidden = 'is-hidden'
+jQuery ($) ->
+	'strict mode'
 
-icon.addEventListener 'click', () ->
-	className = list.className
-	if className.indexOf(isHidden) is -1
-		className += ' ' + isHidden
-	else
-		className = className.replace(isHidden, '')
+	_icon = $ '.js-footer-icon'
+	_list = $ '.js-footer-list'
+	isHidden = 'is-hidden'
 
-	list.className = className
-	return false
+	_icon.click ()->
+		_list.toggleClass isHidden
+		# todo: smooth scroll when list opening
+		return false

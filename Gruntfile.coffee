@@ -18,14 +18,22 @@ module.exports = (grunt) ->
 		coffee:
 			compile:
 				files:
-					'build/build.js': [
-						'static/js/src/footer.coffee'
+					'build/bm.js': [
+						'static/js/src/*.coffee'
 					]
 
 		uglify:
 			ui:
 				files:
-					'build/build.min.js': 'build/build.js'
+					'build/bm.min.js': 'build/bm.js'
+
+		concat:
+			build:
+				src: [
+					'bower_components/jquery/dist/jquery.min.js'
+					'build/bm.min.js'
+				]
+				dest: 'build/build.js'
 
 		notify:
 			build_ready:
@@ -33,16 +41,16 @@ module.exports = (grunt) ->
 					message: 'Build is ready!'
 
 		watch:
-			stylus:
+			styles:
 				files: [
 					'static/css/**/*.styl'
 				],
 				tasks: ['stylus', 'notify:build_ready']
-			ui:
+			scripts:
 				files: [
 					'static/js/**/*.coffee'
 				],
-				tasks: ['coffee', 'uglify', 'notify:build_ready']
+				tasks: ['coffee', 'uglify', 'concat', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'coffee', 'uglify', 'watch']
-	grunt.registerTask 'deploy', ['stylus', 'coffee', 'uglify']
+	grunt.registerTask 'default', ['stylus', 'coffee', 'uglify', 'concat', 'watch']
+	grunt.registerTask 'deploy', ['stylus', 'coffee', 'uglify', 'concat']

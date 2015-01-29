@@ -9,19 +9,25 @@
 	<link rel="stylesheet" href="build/build.css">
 </head>
 <body>
+	<nav class="mainmenu dark js-menu">
+		<a class="mainmenu__item mainmenu__item_about" href="#about">About me</a>
+		<a class="mainmenu__item mainmenu__item_portfolio" href="#portfolio">Portfolio</a>
+		<a class="mainmenu__item mainmenu__item_resume" href="#resume">Resume</a>
+		<a class="mainmenu__item mainmenu__item_contacts" href="#contacts">Contacts</a>
+	</nav>
 	<header class="jumbotron">
 		<h1 class="jumbotron__name">Alexander Burtsev</h1>
 		<p class="jumbotron__desc">Frontend-developer &amp; traveler</p>
 	</header>
 
 	<section class="slide slide_about">
-		<div class="title title_about">
+		<div class="title title_about js-rubicon">
 			<div class="title__wrapper">
-				<div class="title__gurt" id="about">
+				<div class="title__gurt">
 					<span class="title__icon flaticon-man143"></span>
 				</div>
 			</div>
-			<h2 class="title__head">About me</h2>
+			<h2 class="title__head" id="about" data-slide="on">About me</h2>
 		</div>
 		<div class="slide__text typograph">
 			<h3>My work</h3>
@@ -45,11 +51,11 @@
 	<section class="slide">
 		<div class="title title_portfolio">
 			<div class="title__wrapper">
-				<div class="title__gurt" id="portfolio">
+				<div class="title__gurt">
 					<span class="title__icon flaticon-portfolio14"></span>
 				</div>
 			</div>
-			<h2 class="title__head">Portfolio</h2>
+			<h2 class="title__head" id="portfolio" data-slide="on">Portfolio</h2>
 		</div>
 		<div class="slide__text slide__text_free clearfix">
 			<a class="project" href="http://rememba.ru/">
@@ -82,11 +88,11 @@
 	<section class="slide">
 		<div class="title title_resume">
 			<div class="title__wrapper">
-				<div class="title__gurt" id="resume">
+				<div class="title__gurt">
 					<span class="title__icon flaticon-curriculum"></span>
 				</div>
 			</div>
-			<h2 class="title__head">Resume</h2>
+			<h2 class="title__head" id="resume" data-slide="on">Resume</h2>
 		</div>
 		<div class="slide__text typograph">
 			<h3>Skills</h3>
@@ -171,11 +177,11 @@
 	<section class="slide">
 		<div class="title title_contacts">
 			<div class="title__wrapper">
-				<div class="title__gurt" id="contacts">
+				<div class="title__gurt">
 					<span class="title__icon flaticon-address14"></span>
 				</div>
 			</div>
-			<h2 class="title__head">Contacts</h2>
+			<h2 class="title__head" id="contacts" data-slide="on">Contacts</h2>
 		</div>
 		<div class="slide__text slide__text_free">
 			<p>The best way to contact me is <a href="mailto:albburtsev@gmail.com">to write me at email</a> or <a href="skype:albburtsev">add me in Skype</a>.</p>
@@ -260,6 +266,6 @@
 			<li class="footer__link"><a href="http://bower.io/">Bower</a></li>
 		</ul>
 	</footer>
-	<script src="build/build.min.js"></script>
+	<script src="build/build.js"></script>
 </body>
 </html>
