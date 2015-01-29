@@ -8,7 +8,7 @@
     "url": "git@github.com:albburtsev/burtsev.me.git"
   },
   "scripts": {
-    "postinstall": "bower install && grunt"
+    "postinstall": "bower install && grunt deploy"
   },
   "author": "Alexander Burtsev",
   "license": "MIT",

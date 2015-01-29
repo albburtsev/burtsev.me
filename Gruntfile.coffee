@@ -40,3 +40,4 @@ module.exports = (grunt) ->
 				tasks: ['coffee', 'notify:build_ready']
 
 	grunt.registerTask 'default', ['stylus', 'coffee', 'watch']
+	grunt.registerTask 'deploy', ['stylus', 'coffee']

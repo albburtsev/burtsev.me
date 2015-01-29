@@ -3,8 +3,7 @@
 
 	for $slide in keys($slides)
 		&_{$slide}
-			.title__icon,
-			.title__icon:hover
+			.title__icon
 				background: url($image_path''$slide'.png')
 		&_{$slide}
 			.title__head
@@ -13,23 +12,30 @@
 	&__head
 		margin: 0
 		font: 2.5rem $font_condensed
-		line-height: 4rem
+		line-height: 3.5rem
 		box-shadow: $shadow
 
-	&__text
-		display: block
-		width: 50%
+	&__wrapper
+		position: relative
+		margin: 0 $side_padding
+
+		@media only screen and (max-width: $small_screen)
+			margin: 0
+
+		@media screen and (min-width: $wide_screen)
+			margin: 0 $wide_side_padding
 
 	&__gurt
+		position: absolute
+		top: -1.25rem
+		left: 0
 		width: 6rem
 		height: 6rem
-		margin: -5rem auto 0
 		background: #FFF
 		border-radius: 50%
 		box-shadow: $shadow
 
-	&__icon,
-	&__icon:hover
+	&__icon
 		display: inline-block
 		width: 5rem
 		height: 5rem
@@ -40,14 +46,4 @@
 		font-size: 3rem
 		line-height: 5rem
 		text-shadow: $shadow
-		text-decoration: none
 		box-shadow: $shadow
-
-@media only screen and (max-width: 600px)
-	.title
-		&__text
-			width: auto
-			padding: 0 10%
-			text-align: left
-		&__gurt
-			margin: -5rem 1rem 0 auto

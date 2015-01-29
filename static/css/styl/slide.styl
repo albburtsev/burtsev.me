@@ -1,21 +1,13 @@
 .slide
-	padding: 0 0 3rem 0
+	padding: 0 0 2rem 0
 	font-size: .8rem
 	background: #FFF
 
 	&__text
-		padding: 0 10%
+		padding: 0 $side_padding
 
-		&_center
-			text-align: center
-		
+		@media screen and (min-width: $wide_screen)
+			padding: 0 $wide_side_padding
+
 		&_free
-			padding-top: 1rem
-
-	h2, h3, h4
-		font-weight: normal
-		text-align: center
-
-	ul
-		padding: 0 0 0 1rem
-		list-style: square
+			padding-top: 2rem

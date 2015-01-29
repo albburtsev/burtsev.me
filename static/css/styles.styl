@@ -5,6 +5,12 @@ $font_condensed = 'Open Sans Condensed', $font_default
 
 $image_path = '../static/i/'
 
+$wide_screen = 1500px
+$medium_screen = 800px
+$small_screen = 450px
+
+$side_padding = 10%
+$wide_side_padding = 15%
 $shadow = 0 0 .1rem #000
 $gray_line = 1px solid #999
 
@@ -69,10 +75,10 @@ a
 .is-hidden
 	opacity: 0
 
-@media only screen and (max-width: 800px)
+@media only screen and (max-width: $medium_screen)
 	html
 		font-size: 15px
 
-@media only screen and (max-width: 450px)
+@media only screen and (max-width: $small_screen)
 	html
 		font-size: 15px
