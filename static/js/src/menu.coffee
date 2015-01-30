@@ -22,7 +22,7 @@ jQuery ($)->
 		, 50
 
 	# Scroll page to given slide
-	scrollTooo = (path)->
+	scrollTo = (path)->
 		_slide = $ '#' + path
 		top = _slide.offset().top
 		top -= _menu.height()
@@ -49,7 +49,7 @@ jQuery ($)->
 		html5history: true
 
 	router.on '*', (path)->
-		scrollTooo path
+		scrollTo path
 
 	router.init()
 
