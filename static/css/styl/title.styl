@@ -7,8 +7,10 @@
 				background: url($image_path''$slide'.png')
 		&_{$slide}
 			.title__head
-				// background: $slides[$slide][0]
 				background: linear-gradient(top, $slides[$slide][0], #FFF)
+
+				@media only screen and (max-width: $medium_screen)
+					background: $slides[$slide][0]
 
 				&:before
 					display: block
@@ -21,8 +23,10 @@
 		margin: 0
 		font: 2.2rem $font_condensed
 		line-height: 3.5rem
-		//box-shadow: $shadow
 		color: #555
+
+		@media only screen and (max-width: $medium_screen)
+			box-shadow: $shadow
 
 	&__wrapper
 		position: relative
