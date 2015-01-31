@@ -34,9 +34,18 @@ module.exports = (grunt) ->
 				src: [
 					'bower_components/jquery/dist/jquery.min.js'
 					'bower_components/director/build/director.min.js'
+					'build/modernizr.custom.js'
 					'build/bm.min.js'
 				]
 				dest: 'build/build.js'
+
+		modernizr:
+			dist:
+				devFile: 'remote'
+				outputFile: 'build/modernizr.custom.js'
+				extra:
+					shiv: true
+					cssclasses: true
 
 		notify:
 			build_ready:
@@ -55,5 +64,5 @@ module.exports = (grunt) ->
 				],
 				tasks: ['coffee', 'uglify', 'concat', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'coffee', 'uglify', 'concat', 'watch']
+	grunt.registerTask 'default', ['stylus', 'modernizr', 'coffee', 'uglify', 'concat', 'watch']
 	grunt.registerTask 'deploy', ['stylus', 'coffee', 'uglify', 'concat']
