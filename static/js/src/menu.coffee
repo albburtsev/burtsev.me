@@ -36,7 +36,7 @@ jQuery ($)->
 
 		_body.animate
 			scrollTop: top
-		, scrollDuration
+		, scrollDuration, scrollSpy
 
 	# Scroll page and update route after click into menu item	
 	_links.click (e)->
