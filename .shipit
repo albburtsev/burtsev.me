@@ -1,5 +1,5 @@
 host='burtsev.me'
-path='/home/sites/new.burtsev.me/www'
+path='/home/sites/burtsev.me/www'
 
 [deploy]
 git checkout master
