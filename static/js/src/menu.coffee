@@ -14,6 +14,7 @@ jQuery ($)->
 	scrollDuration = 200 # ms
 	scrollDelay = 100 # ms
 	viewports = {}
+	router = null
 
 	_win.on 'resize vpchange', ()->
 		checkSlides()
@@ -42,7 +43,9 @@ jQuery ($)->
 	_links.click (e)->
 		_link = $ e.target
 		id = _link.attr('href').substr 1
-		router.setRoute id
+
+		if router
+			router.setRoute id
 
 		return false
 
@@ -85,11 +88,12 @@ jQuery ($)->
 	_win.trigger 'vpchange'
 
 	# Router: https://github.com/flatiron/director#api-documentation
-	router = Router()
-	router.configure
-		html5history: true
+	if window.Router
+		router = Router()
+		router.configure
+			html5history: true
 
-	router.on '*', (path)->
-		scrollTo path
+		router.on '*', (path)->
+			scrollTo path
 
-	router.init()
+		router.init()

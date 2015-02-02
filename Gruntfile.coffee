@@ -15,6 +15,13 @@ module.exports = (grunt) ->
 				files:
 					'build/build.css': 'static/css/styles.styl'
 
+		pixrem:
+			options:
+				rootvalue: '25px'
+			dist:
+				src: 'build/build.css'
+				dest: 'build/build.ie.css'
+
 		coffee:
 			compile:
 				files:
@@ -28,24 +35,23 @@ module.exports = (grunt) ->
 					'build/bm.min.js': 'build/bm.js'
 
 		concat:
+			options:
+				separator: '\n;'
 			build:
-				options:
-					separator: ';'
 				src: [
 					'bower_components/jquery/dist/jquery.min.js'
 					'bower_components/director/build/director.min.js'
-					'build/modernizr.custom.js'
 					'build/bm.min.js'
 				]
 				dest: 'build/build.js'
 
-		modernizr:
-			dist:
-				devFile: 'remote'
-				outputFile: 'build/modernizr.custom.js'
-				extra:
-					shiv: true
-					cssclasses: true
+			build_ie:
+				src: [
+					'bower_components/html5shiv/dist/html5shiv.min.js'
+					'bower_components/jquery-legacy/jquery.min.js'
+					'build/bm.min.js'
+				]
+				dest: 'build/build.ie.js'
 
 		notify:
 			build_ready:
@@ -57,12 +63,12 @@ module.exports = (grunt) ->
 				files: [
 					'static/css/**/*.styl'
 				],
-				tasks: ['stylus', 'notify:build_ready']
+				tasks: ['stylus', 'pixrem', 'notify:build_ready']
 			scripts:
 				files: [
 					'static/js/**/*.coffee'
 				],
 				tasks: ['coffee', 'uglify', 'concat', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'modernizr', 'coffee', 'uglify', 'concat', 'watch']
-	grunt.registerTask 'deploy', ['stylus', 'coffee', 'uglify', 'concat']
+	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'watch']
+	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat']

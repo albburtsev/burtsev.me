@@ -7,6 +7,10 @@
 	<title>Alexander Burtsev: frontend-developer &amp; traveler</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="build/build.css">
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" href="build/build.ie.css">
+	<script src="build/build.ie.js"></script>
+	<![endif]-->
 </head>
 <body>
 	<nav class="mainmenu dark js-menu">
@@ -266,6 +270,8 @@
 			<li class="footer__link"><a href="http://bower.io/">Bower</a></li>
 		</ul>
 	</footer>
+	<!--[if gte IE 9]> -->
 	<script src="build/build.js"></script>
+	<!--[endif]-->
 </body>
 </html>
