@@ -4,7 +4,7 @@
 	for $slide in keys($slides)
 		&_{$slide}
 			.title__icon
-				background: url($image_path''$slide'.png')
+				background: url($pattern_path''$slide'.png')
 		&_{$slide}
 			.title__head
 				background: linear-gradient(top, $slides[$slide][0], #FFF)
@@ -17,7 +17,7 @@
 					height: .2rem
 					content: ''
 					font-size: 0
-					background: url($image_path''$slide'.png')
+					background: url($pattern_path''$slide'.png')
 
 	&__head
 		margin: 0

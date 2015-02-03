@@ -53,10 +53,29 @@ module.exports = (grunt) ->
 				]
 				dest: 'build/build.ie.js'
 
+		imagemin:
+			screenshots:
+				files: [{
+					expand: true
+					cwd: 'static/i/screenshots/src/'
+					src: ['*.png']
+					dest: 'static/i/screenshots/'
+				}]
+			patterns:
+				files: [
+						expand: true
+						cwd: 'static/i/patterns/src/'
+						src: ['*.png']
+						dest: 'static/i/patterns/'
+				]
+
 		notify:
 			build_ready:
 				options:
 					message: 'Build is ready!'
+			imagemin:
+				options:
+					message: 'All images was minified'
 
 		watch:
 			styles:
@@ -72,3 +91,4 @@ module.exports = (grunt) ->
 
 	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'watch']
 	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat']
+	grunt.registerTask 'raster', ['imagemin', 'notify:imagemin']
