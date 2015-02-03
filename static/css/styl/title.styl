@@ -28,6 +28,9 @@
 		@media only screen and (max-width: $medium_screen)
 			box-shadow: $shadow
 
+		@media print
+			line-height: 1.0
+
 	&__wrapper
 		position: relative
 		margin: 0 $side_padding
@@ -47,6 +50,9 @@
 		background: #FFF
 		border-radius: 50%
 		box-shadow: $shadow
+
+		@media print
+			display: none
 
 	&__icon
 		display: inline-block

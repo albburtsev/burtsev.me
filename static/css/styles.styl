@@ -61,6 +61,10 @@ a
 	&:hover
 		color: #cc6666
 
+	@media print
+		text-decoration: none
+		color: #333
+
 .dark
 	background: #333 embedurl('../i/dark_geometric.png') // Image inlining for page background
 
@@ -75,10 +79,22 @@ a
 .is-hidden
 	opacity: 0
 
+.is-no-print
+	@media print
+		display: none
+
+.is-no-screen
+	@media screen
+		display: none
+
 @media only screen and (max-width: $medium_screen)
+	html
+		font-size: 20px
+
+@media only screen and (max-width: $small_screen)
 	html
 		font-size: 15px
 
-@media only screen and (max-width: $small_screen)
+@media print
 	html
 		font-size: 15px
