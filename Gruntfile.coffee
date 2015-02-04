@@ -13,26 +13,26 @@ module.exports = (grunt) ->
 						'bower_components/normalize.styl/'
 					]
 				files:
-					'build/build.css': 'static/css/styles.styl'
+					'src/static/build/build.css': 'src/static/css/styles.styl'
 
 		pixrem:
 			options:
 				rootvalue: '25px'
 			dist:
-				src: 'build/build.css'
-				dest: 'build/build.ie.css'
+				src: 'src/static/build/build.css'
+				dest: 'src/static/build/build.ie.css'
 
 		coffee:
 			compile:
 				files:
-					'build/bm.js': [
-						'static/js/src/*.coffee'
+					'src/static/build/bm.js': [
+						'src/static/js/src/*.coffee'
 					]
 
 		uglify:
 			ui:
 				files:
-					'build/bm.min.js': 'build/bm.js'
+					'src/static/build/bm.min.js': 'src/static/build/bm.js'
 
 		concat:
 			options:
@@ -41,9 +41,9 @@ module.exports = (grunt) ->
 				src: [
 					'bower_components/jquery/dist/jquery.min.js'
 					'bower_components/director/build/director.min.js'
-					'build/bm.min.js'
+					'src/static/build/bm.min.js'
 				]
-				dest: 'build/build.js'
+				dest: 'src/static/build/build.js'
 
 			build_ie:
 				src: [
@@ -51,22 +51,22 @@ module.exports = (grunt) ->
 					'bower_components/jquery-legacy/jquery.min.js'
 					'build/bm.min.js'
 				]
-				dest: 'build/build.ie.js'
+				dest: 'src/static/build/build.ie.js'
 
 		imagemin:
 			screenshots:
 				files: [{
 					expand: true
-					cwd: 'static/i/screenshots/src/'
+					cwd: 'src/static/i/screenshots/src/'
 					src: ['*.png']
-					dest: 'static/i/screenshots/'
+					dest: 'src/static/i/screenshots/'
 				}]
 			patterns:
 				files: [
 						expand: true
-						cwd: 'static/i/patterns/src/'
+						cwd: 'src/static/i/patterns/src/'
 						src: ['*.png']
-						dest: 'static/i/patterns/'
+						dest: 'src/static/i/patterns/'
 				]
 
 		notify:
@@ -80,12 +80,12 @@ module.exports = (grunt) ->
 		watch:
 			styles:
 				files: [
-					'static/css/**/*.styl'
+					'src/static/css/**/*.styl'
 				],
 				tasks: ['stylus', 'pixrem', 'notify:build_ready']
 			scripts:
 				files: [
-					'static/js/**/*.coffee'
+					'src/static/js/**/*.coffee'
 				],
 				tasks: ['coffee', 'uglify', 'concat', 'notify:build_ready']
 
