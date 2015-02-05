@@ -1,8 +1,9 @@
 ---
 layout: "slide"
 title: "About me"
-id: "about"
+key: "about"
 isSlide: true
+icon: "man143"
 ---
 
 ### My work
