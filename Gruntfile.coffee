@@ -99,5 +99,5 @@ module.exports = (grunt) ->
 				tasks: ['coffee', 'uglify', 'concat', 'shell:docpad', 'notify:build_ready']
 
 	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'shell:docpad', 'watch']
-	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat']
+	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'shell:docpad']
 	grunt.registerTask 'raster', ['imagemin', 'notify:imagemin']
