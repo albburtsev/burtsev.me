@@ -5,6 +5,8 @@ path='/home/sites/burtsev.me/www'
 git checkout master
 git pull
 npm install
+rm -rf out/
+docpad generate
 
 [status]
 uptime
