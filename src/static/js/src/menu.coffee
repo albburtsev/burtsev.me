@@ -16,7 +16,7 @@ jQuery ($)->
 	viewports = {}
 	router = null
 
-	_win.on 'resize vpchange', ()->
+	_win.on 'resize load vpchange', ()->
 		checkSlides()
 		rubuconValue = _rubucon.offset().top
 

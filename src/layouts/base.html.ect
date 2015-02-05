@@ -7,19 +7,18 @@
 	<meta name="yandex-verification" content="450792568999f995">
 	<%- @getBlock("meta").toHTML() %>
 	<title><%= @getTitle() %></title>
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" href="build/build.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/build/build.css">
 	<!--[if lte IE 8]>
-	<link rel="stylesheet" href="build/build.ie.css">
-	<script src="build/build.ie.js"></script>
+	<link rel="stylesheet" href="/build/build.ie.css">
+	<script src="/build/build.ie.js"></script>
 	<![endif]-->
 </head>
 <body>
 	<nav class="mainmenu dark js-menu">
-		<a class="mainmenu__item mainmenu__item_about" href="#about">About me</a>
-		<a class="mainmenu__item mainmenu__item_portfolio" href="#portfolio">Portfolio</a>
-		<a class="mainmenu__item mainmenu__item_resume" href="#resume">Resume</a>
-		<a class="mainmenu__item mainmenu__item_contacts" href="#contacts">Contacts</a>
+		<% for slide in @getCollection("slides").toJSON() : %>
+		<a class="mainmenu__item mainmenu__item_<%= slide.key %>" href="#<%= slide.key %>"><%= slide.title %></a>
+		<% end %>
 	</nav>
 	<header class="jumbotron">
 		<h1 class="jumbotron__name"><a href="/">Alexander Burtsev</a></h1>
@@ -35,15 +34,13 @@
 			<span class="footer__icon flaticon-list23 js-footer-icon"></span>
 		</h2>
 		<ul class="footer__list js-footer-list is-hidden">
-			<li class="footer__link"><a href="//github.com/albburtsev/burtsev.me">Common sense</a></li>
-			<li class="footer__link"><a href="//coffeescript.org/">CoffeeScript</a></li>
-			<li class="footer__link"><a href="//learnboost.github.io/stylus/">Stylus</a></li>
-			<li class="footer__link"><a href="//gruntjs.com/">Grunt</a></li>
-			<li class="footer__link"><a href="//bower.io/">Bower</a></li>
+			<% for flink in @poweredBy : %>
+			<li class="footer__link"><a href="<%= flink[1] %>"><%= flink[0] %></a></li>
+			<% end %>
 		</ul>
 	</footer>
 	<!--[if gte IE 9]> -->
-	<script src="build/build.js"></script>
+	<script src="/build/build.js"></script>
 	<!--[endif]-->
 
 	<!-- Yandex.Metrika counter -->

@@ -14,14 +14,14 @@ slides = @getCollection('slides').toJSON()
 				<span class="title__icon flaticon-<%= slide.icon %>"></span>
 			</div>
 		</div>
-		<h2 class="title__head" id="about"><%= slide.title %></h2>
+		<h2 class="title__head" id="<%= slide.key %>"><%= slide.title %></h2>
 	</div>
 	<% if slide.extension is "md" : %>
 	<div class="slide__text typograph">
 		<%- slide.contentRenderedWithoutLayouts %>
 	</div>
 	<% else : %>
-	<%- slide.contentRenderedWithoutLayouts %>
+	<%- slide.contentRendered %>
 	<% end %>
 </section>
 <% end %>

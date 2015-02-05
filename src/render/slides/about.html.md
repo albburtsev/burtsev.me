@@ -1,9 +1,9 @@
 ---
-layout: "slide"
 title: "About me"
 key: "about"
 isSlide: true
 icon: "man143"
+date: 1
 ---
 
 ### My work
