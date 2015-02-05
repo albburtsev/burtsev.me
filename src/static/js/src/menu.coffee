@@ -28,6 +28,10 @@ jQuery ($)->
 	# Scroll page to given slide
 	scrollTo = (path)->
 		_slide = $ '#' + path
+
+		if not _slide.length
+			return
+
 		top = _slide.offset().top
 		top -= _menu.height()
 		top = parseInt top, 10
@@ -39,13 +43,18 @@ jQuery ($)->
 			scrollTop: top
 		, scrollDuration, scrollSpy
 
-	# Scroll page and update route after click into menu item	
+	# Scroll page and update route after click into menu item
 	_links.click (e)->
 		_link = $ e.target
 		id = _link.attr('href').substr 1
 
 		if router
 			router.setRoute id
+
+		# Redirect for menu links without slides
+		_target = $ '#' + id
+		if not _target.length and _link.closest('.js-menu').length
+			location.href = '/' + id
 
 		return false
 
@@ -78,6 +87,9 @@ jQuery ($)->
 			else if vp.top < wvp.top and vp.top + vp.height > wvp.top
 				value = Math.min wvp.height, vp.top + vp.height - wvp.top
 			intersections.push [key, Math.max 0, value]
+
+		if not intersections.length
+			return
 
 		intersections.sort(cmpMinValue)
 		key = intersections[0][0]
