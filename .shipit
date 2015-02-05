@@ -6,7 +6,7 @@ git checkout master
 git pull
 npm install
 rm -rf out/
-docpad generate
+docpad generate --env static
 
 [status]
 uptime
