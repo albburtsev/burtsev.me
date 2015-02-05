@@ -77,18 +77,27 @@ module.exports = (grunt) ->
 				options:
 					message: 'All images was minified'
 
+		shell:
+			options:
+				stdout: true
+			docpad:
+				command: [
+					'rm -rf out/'
+					'docpad generate --env static'
+				].join '&&'
+
 		watch:
 			styles:
 				files: [
 					'src/static/css/**/*.styl'
 				],
-				tasks: ['stylus', 'pixrem', 'notify:build_ready']
+				tasks: ['stylus', 'pixrem', 'shell:docpad', 'notify:build_ready']
 			scripts:
 				files: [
 					'src/static/js/**/*.coffee'
 				],
-				tasks: ['coffee', 'uglify', 'concat', 'notify:build_ready']
+				tasks: ['coffee', 'uglify', 'concat', 'shell:docpad', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'watch']
+	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'shell:docpad', 'watch']
 	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat']
 	grunt.registerTask 'raster', ['imagemin', 'notify:imagemin']

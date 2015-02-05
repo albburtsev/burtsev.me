@@ -5,7 +5,7 @@ jQuery ($)->
 	_doc = $ document
 	_body = $ 'html,body'
 	_menu = $ '.js-menu'
-	_links = $ 'a', _menu
+	_links = $ 'a[href*="#"]'
 	_rubucon = $ '.js-rubicon'
 
 	# Show menu after scroll down

@@ -28,6 +28,7 @@
     "grunt-modernizr": "^0.6.0",
     "grunt-notify": "^0.4.1",
     "grunt-pixrem": "^0.1.2",
+    "grunt-shell": "^1.1.1",
     "load-grunt-tasks": "^2.0.0",
     "time-grunt": "^1.0.0"
   }

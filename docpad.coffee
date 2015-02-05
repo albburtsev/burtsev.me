@@ -87,7 +87,7 @@ docpadConfig = {
 			['Stylus', '//learnboost.github.io/stylus/']
 			['Grunt', '//gruntjs.com/']
 			['Bower', '//bower.io/']
-			]
+		]
 
 		getTitle: ()->
 			if @document.title then "#{@document.title} — #{@site.title}" else @site.title
