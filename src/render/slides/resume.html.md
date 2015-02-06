@@ -8,7 +8,7 @@ date: 3
 
 ### Skills
 
-Not forgetting about supporting old browsers, I can find application for cutting-edge technologies. I try automating all the routine in my daily work. In my 10 year experience I worked as frontend-developer, but I also have practice in backend developing.
+Not forgetting about supporting old browsers, I can find application for cutting-edge technologies. I try automating all the routine in my daily work. In my 10 years of experience I worked as frontend-developer, but I also have experience in backend development.
 
 #### Frontend
 
@@ -20,7 +20,7 @@ Not forgetting about supporting old browsers, I can find application for cutting
 
 Python (Django, Tornado), PHP (Twig), Node.js (Express), Bash.
 
-#### Administration and databases
+#### Administration and Databases
 
  * __SQL__: MySQL, PostreSQL
  * __Servers__: Nginx, Apache
@@ -61,7 +61,7 @@ JavaScript-developer of content projects Mail.Ru.
 
 HTML coder in content projects and mail service.
 
-### My projects
+### My Projects
 
 I'm one of the frontend-developers in project [rememba.ru](//rememba.ru/).
 
