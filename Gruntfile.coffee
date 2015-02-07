@@ -90,13 +90,20 @@ module.exports = (grunt) ->
 			styles:
 				files: [
 					'src/static/css/**/*.styl'
-				],
+				]
 				tasks: ['stylus', 'pixrem', 'shell:docpad', 'notify:build_ready']
 			scripts:
 				files: [
 					'src/static/js/**/*.coffee'
-				],
+				]
 				tasks: ['coffee', 'uglify', 'concat', 'shell:docpad', 'notify:build_ready']
+			docpad:
+				files: [
+					'docpad.coffee'
+					'src/render/**/*.*'
+					'src/layouts/**/*.*'
+				]
+				tasks: ['shell:docpad', 'notify:build_ready']
 
 	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'shell:docpad', 'watch']
 	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat']

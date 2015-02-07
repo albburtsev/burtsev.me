@@ -1,12 +1,10 @@
-<div class="slide__text slide__text_free clearfix">
-	<% for pid, project of @projects : %>
-	<a class="project" href="<%= project.url %>" target="_blank">
+<div class="projects clearfix">
+	<% for pid, project of @projects : %><a class="project" href="<%= project.url %>" target="_blank">
 		<img class="project__image" src="<%= project.screenshot %>" alt="">
 		<span class="project__title"><%= project.title %></span>
 		<span class="project__shutter dark">
 			<span class="project__shutter__caption"><%= project.caption %></span>
 			<%= project.text %>
 		</span>
-	</a>
-	<% end %>
+	</a><% end %>
 </div>
