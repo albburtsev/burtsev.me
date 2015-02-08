@@ -4,7 +4,7 @@
 	top: -3rem
 	width: 100%
 	margin: 3rem 0 0
-	font: 1rem/1.0 $font_condensed
+	font-rem(1rem)
 	text-align: center
 
 	@media print
@@ -15,6 +15,8 @@
 		top: 0
 		margin: 0
 		box-shadow: $shadow
+		background: $base_dark
+		background: rgba(0, 0, 0, .85)
 		transition: top .2s ease-in-out
 
 	&__item

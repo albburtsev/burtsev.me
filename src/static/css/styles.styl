@@ -14,6 +14,7 @@ $side_padding = 10%
 $wide_side_padding = 15%
 $shadow = 0 0 .1rem #000
 $gray_line = 1px solid #999
+$base_dark = #333
 
 $headers = { // [0] - font-size, [1] — margin-top, [2] — margin-bottom
 	h2: (2rem 1rem .7rem)
@@ -27,6 +28,16 @@ $slides = {
 	portfolio: (#faeeff #7f30b8)
 }
 
+// Mixins
+
+// Holy shit! The rem unit is not supported in IE9 for the font shorthand.
+// Proof: http://stackoverflow.com/questions/16157342/css-rem-unit-not-working-with-font-declarations
+font-rem($size, $height = 1.0, $family = $font_condensed, $weight = normal)
+	font-size: $size
+	line-height: $height
+	font-family: $family
+	font-weight: $weight
+
 // Imports
 @import 'nib'
 @import 'normalize'
@@ -38,8 +49,8 @@ html
 	font-size: 25px
 	font-family: $font_default
 	line-height: 1.8
-	color: #333
-	background: #333
+	color: $base_dark
+	background: $base_dark
 
 body
 	min-width: 300px
@@ -50,7 +61,7 @@ for $hi in keys($headers)
 		margin: $headers[$hi][1] 0 $headers[$hi][2]
 		font-family: $font_condensed
 		font-size: $headers[$hi][0]
-		line-height: $headers[$hi][0]
+		line-height: 1.0
 
 p
 	padding: 0
@@ -64,10 +75,10 @@ a
 
 	@media print
 		text-decoration: none
-		color: #333
+		color: $base_dark
 
 .dark
-	background: #333 embedurl('../i/dark_geometric.png') // Image inlining for page background
+	background: $base_dark embedurl('../i/dark_geometric.png') // Image inlining for page background
 
 .clearfix
 	clearfix()
