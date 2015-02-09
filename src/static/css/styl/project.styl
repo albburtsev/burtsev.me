@@ -7,7 +7,7 @@
 	position: relative
 	width: 30%
 	margin: 0 1.5% 1rem
-	padding: 0 0 .5rem 0
+	padding: 0 0 .7rem 0
 	text-align: center
 	vertical-align: top
 
@@ -16,12 +16,7 @@
 		opacity: 1
 
 	&__title
-		font-family: $font_condensed
-		font-size: 1.5rem
-		line-height: 1.5rem
-
-		&_inner
-			color: #FFF
+		font-rem(1.5rem, 1.0, $font_condensed)
 
 	&__image
 		display: block
@@ -34,19 +29,23 @@
 		left: 0
 		width: 100%
 		height: 0
-		padding: 1.5rem
+		padding: 1rem
 		opacity: 0
-		color: #DDD
-		background: #222
-		font-size: .7rem
+		color: #FFF
+		background: $base_dark
+		background: $base_dark_alpha
 		box-sizing: border-box
 		transition: all .2s ease-in-out
+		font-rem(.6rem, 1.6, $font_default)
+
+		@media only screen and (max-width: 1000px)
+			display: none
 
 		&__caption
 			display: block
-			padding: 1rem 0
+			padding: .3rem 0 .7rem
 			color: #FFF
-			font: 1rem $font_condensed
+			font-rem(1rem, 1.4, $font_condensed)
 
 @media only screen and (max-width: $medium_screen)
 	.project
