@@ -60,29 +60,30 @@ docpadConfig = {
 				link: '//twitter.com/albburtsev'
 				icon: 'social19'
 
+		projectsScreenshotPath: '/build/i/screenshots/'
 		projects:
 			rememba:
 				url: '//rememba.ru/'
 				title: 'Rememba'
-				screenshot: '/i/screenshots/rememba.png'
+				screenshot: 'rememba.png'
 				caption: 'Application for expanding vocabulary'
 				text: 'My contribution: frontend code of application (Backbone/Marionette) and tests (CasperJS/PhantonCSS).'
 			edox:
 				url: '//edox.ru/'
 				title: 'Edox Russia'
-				screenshot: '/i/screenshots/edox.png'
+				screenshot: 'edox.png'
 				caption: 'Edox watches in Russia'
 				text: 'My contribution: frontend (HTML/CSS, jQuery) and backend (CMS Correct).'
 			gc:
 				url: '//www.gcwatches.ru/'
 				title: 'GC Watches'
-				screenshot: '/i/screenshots/gc.png'
+				screenshot: 'gc.png'
 				caption: 'GC Watches in Russia'
 				text: 'My contribution: frontend (HTML/CSS, jQuery) and backend (CMS Correct).'
 			treewt:
 				url: '//3waytalk.com/'
 				title: '3waytalk'
-				screenshot: '/i/screenshots/3waytalk.png'
+				screenshot: '3waytalk.png'
 				caption: 'Connects you to an interpreter'
 				text: 'My contribution: WebRTC client (based on sip.js), audio players (SoundManager), dashboard, etc.'
 

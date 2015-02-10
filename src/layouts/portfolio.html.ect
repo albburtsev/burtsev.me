@@ -1,6 +1,6 @@
 <div class="projects clearfix">
 	<% for pid, project of @projects : %><a class="project" href="<%= project.url %>" target="_blank">
-		<img class="project__image" src="<%= project.screenshot %>" alt="">
+		<img class="project__image" src="<%= @projectsScreenshotPath %><%= project.screenshot %>" alt="">
 		<span class="project__title"><%= project.title %></span>
 		<span class="project__shutter">
 			<span class="project__shutter__caption"><%= project.caption %></span>

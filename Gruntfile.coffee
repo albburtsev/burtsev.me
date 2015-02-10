@@ -59,16 +59,16 @@ module.exports = (grunt) ->
 			screenshots:
 				files: [{
 					expand: true
-					cwd: 'src/static/i/screenshots/src/'
+					cwd: 'src/static/i/screenshots/'
 					src: ['*.png']
-					dest: 'src/static/i/screenshots/'
+					dest: '<%= buildPath %>i/screenshots/'
 				}]
 			patterns:
 				files: [
 						expand: true
-						cwd: 'src/static/i/patterns/src/'
+						cwd: 'src/static/i/patterns/'
 						src: ['*.png']
-						dest: 'src/static/i/patterns/'
+						dest: '<%= buildPath %>i/patterns/'
 				]
 
 		notify:
@@ -96,10 +96,6 @@ module.exports = (grunt) ->
 				filename: 'fingerprint.coffee'
 				template: 'exports.fp = \'<%= fingerprint %>\''
 
-		clean: [
-			'<%= buildPath %>'
-		]
-
 		watch:
 			styles:
 				files: [
@@ -119,6 +115,6 @@ module.exports = (grunt) ->
 				]
 				tasks: ['shell:docpad', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['clean', 'stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint', 'shell:docpad', 'watch']
-	grunt.registerTask 'deploy', ['clean', 'stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint']
+	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint', 'shell:docpad', 'watch']
+	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint']
 	grunt.registerTask 'raster', ['imagemin', 'notify:imagemin']
