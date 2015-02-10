@@ -5,6 +5,8 @@ module.exports = (grunt) ->
 	require('time-grunt')(grunt)
 
 	grunt.initConfig
+		buildPath: 'src/static/build/'
+
 		stylus:
 			styles:
 				options:
@@ -13,26 +15,26 @@ module.exports = (grunt) ->
 						'bower_components/normalize.styl/'
 					]
 				files:
-					'src/static/build/build.css': 'src/static/css/styles.styl'
+					'<%= buildPath %>build.css': 'src/static/css/styles.styl'
 
 		pixrem:
 			options:
 				rootvalue: '25px'
 			dist:
-				src: 'src/static/build/build.css'
-				dest: 'src/static/build/build.ie.css'
+				src: '<%= buildPath %>build.css'
+				dest: '<%= buildPath %>build.ie.css'
 
 		coffee:
 			compile:
 				files:
-					'src/static/build/bm.js': [
+					'<%= buildPath %>bm.js': [
 						'src/static/js/src/*.coffee'
 					]
 
 		uglify:
 			ui:
 				files:
-					'src/static/build/bm.min.js': 'src/static/build/bm.js'
+					'<%= buildPath %>bm.min.js': '<%= buildPath %>bm.js'
 
 		concat:
 			options:
@@ -41,9 +43,9 @@ module.exports = (grunt) ->
 				src: [
 					'bower_components/jquery/dist/jquery.min.js'
 					'bower_components/director/build/director.min.js'
-					'src/static/build/bm.min.js'
+					'<%= buildPath %>bm.min.js'
 				]
-				dest: 'src/static/build/build.js'
+				dest: '<%= buildPath %>build.js'
 
 			build_ie:
 				src: [
@@ -51,7 +53,7 @@ module.exports = (grunt) ->
 					'bower_components/jquery-legacy/jquery.min.js'
 					'build/bm.min.js'
 				]
-				dest: 'src/static/build/build.ie.js'
+				dest: '<%= buildPath %>build.ie.js'
 
 		imagemin:
 			screenshots:
@@ -86,6 +88,18 @@ module.exports = (grunt) ->
 					'docpad generate --env static'
 				].join '&&'
 
+		fingerprint:
+			assets:
+				src: [
+					'<%= buildPath %>*.*'
+				]
+				filename: 'fingerprint.coffee'
+				template: 'exports.fp = \'<%= fingerprint %>\''
+
+		clean: [
+			'<%= buildPath %>'
+		]
+
 		watch:
 			styles:
 				files: [
@@ -105,6 +119,6 @@ module.exports = (grunt) ->
 				]
 				tasks: ['shell:docpad', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'shell:docpad', 'watch']
-	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat']
+	grunt.registerTask 'default', ['clean', 'stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint', 'shell:docpad', 'watch']
+	grunt.registerTask 'deploy', ['clean', 'stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint']
 	grunt.registerTask 'raster', ['imagemin', 'notify:imagemin']

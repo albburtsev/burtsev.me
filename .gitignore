@@ -1,2 +1,3 @@
 out/
 src/static/build/
+fingerprint.coffee

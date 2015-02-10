@@ -8,10 +8,10 @@
 	<%- @getBlock("meta").toHTML() %>
 	<title><%= @getTitle() %></title>
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-	<link rel="stylesheet" href="/build/build.css">
+	<link rel="stylesheet" href="/build/build.css?<%= @fingerprint %>">
 	<!--[if lte IE 8]>
-	<link rel="stylesheet" href="/build/build.ie.css">
-	<script src="/build/build.ie.js"></script>
+	<link rel="stylesheet" href="/build/build.ie.css?<%= @fingerprint %>">
+	<script src="/build/build.ie.js?<%= @fingerprint %>"></script>
 	<![endif]-->
 </head>
 <body>
@@ -41,7 +41,7 @@
 	</footer>
 
 	<!--[if gte IE 9]><!-->
-	<script src="/build/build.js"></script>
+	<script src="/build/build.js?<%= @fingerprint %>"></script>
 	<!--<![endif]-->
 
 	<!-- Yandex.Metrika counter -->

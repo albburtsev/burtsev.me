@@ -1,6 +1,8 @@
 # DocPad Configuration File
 # http://docpad.org/docs/config
 
+fingerprint = require('./fingerprint').fp
+
 # Define the DocPad Configuration
 docpadConfig = {
 	templateData:
@@ -92,6 +94,8 @@ docpadConfig = {
 			['Grunt', '//gruntjs.com/']
 			['Bower', '//bower.io/']
 		]
+
+		fingerprint: fingerprint
 
 		getTitle: ()->
 			if @document.title then "#{@document.title} — #{@site.title}" else @site.title
