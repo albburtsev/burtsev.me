@@ -2,22 +2,24 @@
 	text-align: center
 
 	for $slide in keys($slides)
+		$slide_color = $slides[$slide]
+		$light_color = lightness($slide_color, 90%)
 		&_{$slide}
 			.title__icon
 				background: url($pattern_path''$slide'.png')
 		&_{$slide}
 			.title__head
-				background: linear-gradient(top, $slides[$slide][0], #FFF)
+				background: linear-gradient(top, $light_color, #FFF)
 
 				@media only screen and (max-width: $medium_screen)
-					background: $slides[$slide][0]
+					background: $light_color
 
 				&:before
 					display: block
 					height: .2rem
 					content: ''
 					font-size: 0
-					background: url($pattern_path''$slide'.png')
+					background: $slide_color url($pattern_path''$slide'.png')
 
 	&__head
 		margin: 0
