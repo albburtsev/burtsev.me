@@ -1,0 +1,15 @@
+/* TEAM */
+	Chief: Alexander Burtsev
+	Contact: albburtsev [at] gmail.com
+	Twitter: @albburtsev
+	From: Moscow, Russia
+
+/* THANKS */
+	Advices: Artem Sapegin
+	From: Moscow, Russia
+
+	Text editor: Polina Burtseva
+	From: Moscow, Russia
+
+	Text editor: Alexey Akimov
+	From: LA, California, USA
