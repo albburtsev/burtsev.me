@@ -21,7 +21,6 @@ jQuery ($)->
 		rubuconValue = _rubucon.offset().top
 
 	_doc.on 'scroll', utils.throttle ()->
-			_menu.toggleClass 'is-fixed', _doc.scrollTop() > rubuconValue
 			scrollSpy()
 		, scrollDelay
 
@@ -61,11 +60,11 @@ jQuery ($)->
 	# Scrollspy
 	checkSlides = ()->
 		$('[data-slide]').each ->
-			_this = $ this
-			key = _this.data 'slide'
+			_slide = $ this
+			key = _slide.data 'slide'
 			viewports[key] =
-				top: _this.offset().top
-				height: _this.height()
+				top: _slide.offset().top
+				height: _slide.height()
 
 	cmpMinValue = (i, j)->
 		if i[1] > j[1]
@@ -75,6 +74,10 @@ jQuery ($)->
 		return 0
 
 	scrollSpy = ()->
+		# Check rubicon
+		_menu.toggleClass 'is-fixed', _doc.scrollTop() > rubuconValue
+
+		# Check slide visibility
 		wvp =
 			height: _win.height()
 			top: _doc.scrollTop()
