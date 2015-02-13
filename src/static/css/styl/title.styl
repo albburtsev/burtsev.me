@@ -4,9 +4,11 @@
 	for $slide in keys($slides)
 		$slide_color = $slides[$slide]
 		$light_color = lightness($slide_color, 90%)
+		$slide_bg = $slide_color url($pattern_path''$slide'.png')
+
 		&_{$slide}
 			.title__icon
-				background: url($pattern_path''$slide'.png')
+				background: $slide_bg
 		&_{$slide}
 			.title__head
 				background: linear-gradient(top, $light_color, #FFF)
@@ -19,7 +21,7 @@
 					height: .2rem
 					content: ''
 					font-size: 0
-					background: $slide_color url($pattern_path''$slide'.png')
+					background: $slide_bg
 
 	&__head
 		margin: 0
