@@ -32,28 +32,23 @@ module.exports = (grunt) ->
 					]
 
 		uglify:
-			ui:
-				files:
-					'<%= buildPath %>bm.min.js': '<%= buildPath %>bm.js'
-
-		concat:
 			options:
-				separator: '\n;'
+				sourceMap: true
 			build:
-				src: [
-					'bower_components/jquery/dist/jquery.min.js'
-					'bower_components/director/build/director.min.js'
-					'<%= buildPath %>bm.min.js'
-				]
-				dest: '<%= buildPath %>build.js'
-
+				files:
+					#'<%= buildPath %>bm.min.js': '<%= buildPath %>bm.js'
+					'<%= buildPath %>build.js': [
+						'bower_components/jquery/dist/jquery.js'
+						'bower_components/director/build/director.js'
+						'<%= buildPath %>bm.js'
+					]
 			build_ie:
-				src: [
-					'bower_components/html5shiv/dist/html5shiv.min.js'
-					'bower_components/jquery-legacy/jquery.min.js'
-					'build/bm.min.js'
-				]
-				dest: '<%= buildPath %>build.ie.js'
+				files:
+					'<%= buildPath %>build.ie.js': [
+						'bower_components/html5shiv/dist/html5shiv.js'
+			 			'bower_components/jquery-legacy/jquery.js'
+						'<%= buildPath %>bm.js'
+					]
 
 		imagemin:
 			screenshots:
@@ -106,7 +101,7 @@ module.exports = (grunt) ->
 				files: [
 					'src/static/js/**/*.coffee'
 				]
-				tasks: ['coffee', 'uglify', 'concat', 'shell:docpad', 'notify:build_ready']
+				tasks: ['coffee', 'uglify', 'shell:docpad', 'notify:build_ready']
 			docpad:
 				files: [
 					'docpad.coffee'
@@ -115,6 +110,6 @@ module.exports = (grunt) ->
 				]
 				tasks: ['shell:docpad', 'notify:build_ready']
 
-	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint', 'shell:docpad', 'watch']
-	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'concat', 'fingerprint']
+	grunt.registerTask 'default', ['stylus', 'pixrem', 'coffee', 'uglify', 'fingerprint', 'shell:docpad', 'watch']
+	grunt.registerTask 'deploy', ['stylus', 'pixrem', 'coffee', 'uglify', 'fingerprint']
 	grunt.registerTask 'raster', ['imagemin', 'notify:imagemin']
