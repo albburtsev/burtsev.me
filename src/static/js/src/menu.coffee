@@ -12,7 +12,7 @@ jQuery ($)->
 	# Rubicon — it's a horizontal line. Menu shows when rubicon isn't visible after scroll
 	rubuconValue = 0
 	scrollDuration = 200 # ms
-	scrollDelay = 100 # ms
+	scrollDelay = 50 # ms
 	viewports = {}
 	router = null
 
@@ -20,7 +20,7 @@ jQuery ($)->
 		checkSlides()
 		rubuconValue = _rubucon.offset().top
 
-	_doc.on 'scroll', utils.throttle ()->
+	_doc.on 'scroll', utils.debounce ()->
 			scrollSpy()
 		, scrollDelay
 

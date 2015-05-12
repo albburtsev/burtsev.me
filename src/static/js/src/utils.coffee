@@ -2,18 +2,16 @@
 
 utils = {}
 
-utils.throttle = (fn, delay, context)->
+utils.debounce = (fn, delay, context)->
 	timer = null
 	context = context or this
 	delay = delay or 100
 
 	return ()->
-		if ( timer )
-			return
-
+		args = arguments
+		clearTimeout timer
 		timer = setTimeout ()->
-			timer = null
+			fn.apply context, args
 		, delay
-		fn.apply context, arguments
 
 window.utils = utils;
