@@ -13,9 +13,9 @@
   "author": "Alexander Burtsev",
   "license": "MIT",
   "dependencies": {
-    "docpad": "~6.69.2",
+    "docpad": "~6.78.1",
     "docpad-plugin-ect": "~2.0.1",
-    "docpad-plugin-marked": "~2.2.1"
+    "docpad-plugin-marked": "~2.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

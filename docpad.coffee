@@ -30,6 +30,10 @@ docpadConfig = {
 				value: 'Habrahabr'
 				link: '//habrahabr.ru/users/bur/'
 				icon: 'hotel75'
+			linkedin:
+				value: 'LinkedIn'
+				link: '//www.linkedin.com/pub/alexander-burtsev/26/962/a00'
+				icon: 'linkedin12'
 			github:
 				value: 'Github'
 				link: '//github.com/albburtsev'
