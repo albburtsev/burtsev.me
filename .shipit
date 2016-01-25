@@ -5,16 +5,6 @@ path='/home/sites/burtsev.me/www'
 git checkout master
 git pull
 npm install
-rm -rf out/
-docpad generate --env static
-
-[full]
-git checkout master
-git pull
-npm install
-grunt raster
-rm -rf out/
-docpad generate --env static
 
 [status]
 uptime

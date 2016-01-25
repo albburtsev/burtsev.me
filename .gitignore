@@ -1,3 +1,2 @@
-out/
-src/static/build/
-fingerprint.coffee
+build/
+conf/burtsev.me.conf

@@ -1,0 +1,20 @@
+rm -f conf/burtsev.me.conf
+sed 's?/path/to/project?'`pwd`'?g' conf/burtsev.me.tmpl > conf/burtsev.me.conf
+
+echo ''
+echo 'STEP #1: add this directive in the end of http-block of your NGINX config:'
+echo ''
+echo '#############'
+echo 'include '`pwd`'/conf/burtsev.me.conf;'
+echo '#############'
+echo ''
+echo 'STEP #2: reload server:'
+echo ''
+echo '> nginx -s reload'
+echo ''
+echo 'STEP #3: add this string in your hosts file:'
+echo ''
+echo '127.0.0.1 local.burtsev.me'
+echo ''
+echo 'STEP #4: open http://local.burtsev.me and enjoy!'
+echo ''

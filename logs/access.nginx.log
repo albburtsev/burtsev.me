@@ -1,0 +1,2 @@
+127.0.0.1 - - [25/Jan/2016:21:53:25 +0300] "GET / HTTP/1.1" 200 173 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36" "-"
+127.0.0.1 - - [25/Jan/2016:21:53:26 +0300] "GET /favicon.ico HTTP/1.1" 404 200 "http://local.burtsev.me/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36" "-"
