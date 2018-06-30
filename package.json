@@ -1,0 +1,23 @@
+{
+  "name": "burtsev.me",
+  "version": "2.0.0",
+  "description": "Alexander's Burtsev personal site",
+  "main": "src/index.js",
+  "repository": "git@github.com:albburtsev/burtsev.me.git",
+  "author": "Alexander Burtsev <albburtsev@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "webpack && cp build/index.html .",
+    "clean": "rm -rf build/"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "html-webpack-inline-source-plugin": "^0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.13.7",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  }
+}
